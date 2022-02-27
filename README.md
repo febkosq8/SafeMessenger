@@ -58,4 +58,4 @@ Use these instructions to run the Server and Client locally on your system [Link
 
 ## **Release**
 
-_v1.0 - initial version which has been tested and confirmed working for both encrypted transfer between the Client and Server [Link](github link)_
+_v1.0 - initial version which has been tested and confirmed working for both encrypted transfer between the Client and Server [Link](https://github.com/febkosq8/java_cryptographic_messenger/releases/tag/v1.0)_
