@@ -30,11 +30,6 @@ class Message implements Serializable{
     String timestamp;
 }
 
-class PostSignature implements Serializable
-{
-    byte[] PostSign;
-}
-
 class Server extends Message
 {
     
