@@ -1,6 +1,5 @@
 import java.net.*;
 import java.io.*;
-import java.io.Serializable;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.DataInputStream;
@@ -21,12 +20,7 @@ import java.security.Signature;
 
 import java.util.Scanner;
 
-class PostSignature implements Serializable
-{
-    byte[] PostSign;
-}
-
-class Client extends PostSignature
+class Client
 {
     public static void main(String[] args) throws Exception, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException
     {
@@ -60,11 +54,11 @@ class Client extends PostSignature
             String out1=dis.readUTF();
             String out2=dis.readUTF();;
             String out3=dis.readUTF();
-            byte[] out4 = Base64.getDecoder().decode(out3);
             String decryptFileName=userid+".prv";
             String decryptedMsg = new String();
             try
             {
+                byte[] out4 = Base64.getDecoder().decode(out3);
                 ObjectInputStream out = new ObjectInputStream(new FileInputStream(decryptFileName));
                 PrivateKey PriKey = (PrivateKey)out.readObject();
                 out.close();
