@@ -1,4 +1,4 @@
-# **Safe Messenger**
+# **Java Cryptographic Messenger**
 TBD.
 
 ## **Proposed System**
