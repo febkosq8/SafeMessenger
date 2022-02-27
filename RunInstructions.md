@@ -62,7 +62,7 @@ java Client localhost 8888 bob
 
 ### #5 Screenshot's
 
-Server and Client running with User: alice sending message to bob and all
+Server and Client running, with Client User: alice sending message to bob and all
 
 ![ScreenShot1](https://user-images.githubusercontent.com/33223665/155872813-b313796d-37f9-4e42-91b6-371d50be457f.png)
 
