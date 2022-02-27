@@ -26,10 +26,10 @@ We have a Java Server and Client, that utilizes various algorithms like with Bas
 * Since this encrypted-and-converted message is also a string, the server treats it the same way as an unencrypted message. Note that neither the server nor anyone other than the intended recipient knows how to decrypt it or even who this encrypted message is for.
 * Upon the connection of a new client :
   * The server first sends all the posts it currently has to the client.
-  * Then, it checks if the client wants to post a message. If the client does not want to post a message, then the connection ends.
+* Then, it checks if the client wants to post a message. If the client does not want to post a message, then the connection ends.
   * Otherwise, the server receives the post (the sender userid, the possibly encrypted message, and the timestamp).
-  * It also receives from the client a signature, that is computed based on all three fields of the post and signed by the client (with the appropriate key) to prove their identity. Note that the signature itself is not part of the post and is not supposed to be stored.
- * After receiving the post and the signature, the server verifies the signature with the appropriate key. 
+* It also receives from the client a signature, that is computed based on all three fields of the post and signed by the client (with the appropriate key) to prove their identity. Note that the signature itself is not part of the post and is not supposed to be stored.
+  * After receiving the post and the signature, the server verifies the signature with the appropriate key. 
   * If the signature checks out, it accepts the post and adds it to its collection of posts. 
   * If the signature does not verify, the post is discarded.
   * The server print's the contents of the post and the accept/reject decision to the screen.
