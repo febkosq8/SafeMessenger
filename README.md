@@ -11,10 +11,11 @@ We have a Java Server and Client, that utilizes various algorithms like with Bas
 * Each user has a unique userid (simple string).
   * Each user is associated with a pair of RSA public and private keys, with filenames that have .pub or .prv after the userid, respectively
   * Thus the key files are named alice.pub, alice.prv if the userid is alice.
-  * These keys are generated separately by a program RSAKeyGen.java before running the Client and Server.
-* It is assumed that the server already has the public keys of all legitimate users, and each client program user already has their own private key as well as the public keys of anyone to whom they want to send secret messages. They obtained these keys via some offline method not described here, prior to the execution of the client and server programs. The client and server programs never create any new keys.
-### **Server Side**
+  * These keys are generated separately by a program RSAKeyGen.java before execution of the Client and Server.
+* It is assumed that the server already has the public keys of all legitimate users, and each client program user already has their own private key as well as the public keys of anyone to whom they want to send secret messages.
+* The client and server programs never create any new keys.
 
+### **Server Side**
 
 * A "post" consists of three pieces of information: the userid of the sender, the message which may or may not be encrypted , and a timestamp.
 * * The server keeps a collection of all the posts sent by all legitimate users. 
@@ -35,15 +36,14 @@ We have a Java Server and Client, that utilizes various algorithms like with Bas
 * The connection then ends and the server should wait for the next client. The server should not quit or terminate (even if the signature check fails). 
 
 ### **Client Side**
+
 When the client program starts, it connects to the server (which should be already running on the same port number as the Client) to retrieve all the posts. 
 
 * For each post, it displays the sender userid and the timestamp, and handles the possibly encrypted message as follows. 
-
   * Since it does not know whether each post is encrypted for this user or not, it attempts to decrypt every message as if it is intended for this user; i.e., it convert the message as if it is Base64-encoded, then decrypt it with the appropriate key (as if it is encrypted for this user).
   * If the Base64 conversion does not result in an IllegalArgumentException and the decryption does not result in a BadPaddingException, it is then assumed to be a correct decryption, and it displays this decrypted message.
   * Otherwise (if one of the above exceptions happen), the message is either readable plaintext intended for everyone, or some Base64-encoded string of a message encrypted and intended for someone else; in both cases it displays the original message.
   * Note that for the intended recipient, the decryption happened "transparently" and they would not know that the message was encrypted and intended only for them; while for all other users they will see the presence of an encrypted message from the sender.
-
 * After displaying all posts within the Server, the client program then asks the user whether they want to post a message.
   * If the user wants to, then it prompts the user to enter the userid of the recipient, and the message. 
   * If the user enters "all" as the recipient userid, then the message is not encrypted.
@@ -53,6 +53,7 @@ When the client program starts, it connects to the server (which should be alrea
 * The post and the signature are then sent to the server.
 
 ## **Instructions to Run**
+
 Use these instructions to run the Server and Client locally on your system [Link](/RunInstructions.md)
 
 ## **Release**
