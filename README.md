@@ -11,7 +11,7 @@ We have a Java Server and Client, that utilizes various algorithms like with Bas
 * Each user has a unique userid (simple string).
   * Each user is associated with a pair of RSA public and private keys, with filenames that have .pub or .prv after the userid, respectively
   * Thus the key files are named alice.pub, alice.prv if the userid is alice.
-  * These keys are generated separately by a program RSAKeyGen.java before execution of the Client and Server.
+  * These keys are generated separately by a program [RSAKeyGen.java](/Code/RSAKeyGen.java) before execution of the Client and Server.
 * It is assumed that the server already has the public keys of all legitimate users, and each client program user already has their own private key as well as the public keys of anyone to whom they want to send secret messages.
 * The client and server programs never create any new keys.
 * A "post" consists of three pieces of information: the userid of the sender, the message which may or may not be encrypted , and a timestamp.
