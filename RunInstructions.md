@@ -62,6 +62,16 @@ java Client localhost 8888 bob
 
 ### #5 Screenshot's
 
-Server and Client running with User: alice send message to bob and all
+Server and Client running with User: alice sending message to bob and all
+
 ![ScreenShot1](https://user-images.githubusercontent.com/33223665/155872813-b313796d-37f9-4e42-91b6-371d50be457f.png)
+
+Client running with User: bob reading all the message's posted from the Server
+
+![ScreenShot2](https://user-images.githubusercontent.com/33223665/155872865-4ae8011f-9421-41fc-b2de-5a89a9952eb6.png)
+
+Client running with User: alice reading all the message's posted from the Server
+
+![ScreenShot3](https://user-images.githubusercontent.com/33223665/155872874-908ab7d6-3a3b-40f7-a9ce-922a3670d923.png)
+
 
