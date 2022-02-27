@@ -1,4 +1,4 @@
-# **SafeMessengerF**
+# **Safe Messenger**
 TBD.
 
 ## **Proposed System**
