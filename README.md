@@ -14,12 +14,12 @@ We have a Java Server and Client, that utilizes various algorithms like with Bas
   * These keys are generated separately by a program RSAKeyGen.java before execution of the Client and Server.
 * It is assumed that the server already has the public keys of all legitimate users, and each client program user already has their own private key as well as the public keys of anyone to whom they want to send secret messages.
 * The client and server programs never create any new keys.
+* A "post" consists of three pieces of information: the userid of the sender, the message which may or may not be encrypted , and a timestamp.
 
 ### **Server Side**
 
-* A "post" consists of three pieces of information: the userid of the sender, the message which may or may not be encrypted , and a timestamp.
-* * The server keeps a collection of all the posts sent by all legitimate users. 
-* The server keeps all the posts, in the order they are received. Note that here there are no persistent storage of these posts (so when the server program quits, all posts are lost). The posts are otherwise never removed.
+* The server keeps a collection of all the posts sent by all active users. 
+* The server keeps all the posts, in the order they are received. Note that there are no persistent storage of these posts (so when the server program quits, all posts are lost). The posts are otherwise never removed.
 * The system allows both unencrypted posts that are intended for everyone, and encrypted posts that can only be decrypted by the intended recipient. 
   * If a post is encrypted, the message part would have been encrypted with RSA and the appropriate key of the intended recipient, then converted to a Base64 string.
   * The sender userid and timestamp parts are not encrypted.
