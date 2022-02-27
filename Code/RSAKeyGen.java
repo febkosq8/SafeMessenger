@@ -1,11 +1,14 @@
 import java.io.*;
 import java.security.*;
 
-public class RSAKeyGen {
+public class RSAKeyGen 
+{
 
-	public static void main(String [] args) throws Exception {
+	public static void main(String [] args) throws Exception 
+	{
 
-		if (args.length != 1) {
+		if (args.length != 1) 
+		{
 			System.err.println("Usage: java RSAKeyGen userid");
 			System.exit(-1);
 		}
@@ -22,5 +25,4 @@ public class RSAKeyGen {
 		objOut.writeObject(kp.getPrivate());
 
 	}
-
 }
