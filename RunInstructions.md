@@ -10,7 +10,7 @@
 
 # **Steps to compile the Server and Client**
 
-* Download the latest code from GitHub
+* Download the latest source code from GitHub
 
 ```
 javac Server.java
