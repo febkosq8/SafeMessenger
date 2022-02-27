@@ -1,4 +1,4 @@
-## **Information to host CryptoGIF Web-GUI locally**
+## **Information to host Server and Client**
 
 # ***Prerequisites***
 
